@@ -7,11 +7,9 @@
     <title>Modern POS · DEP</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- Custom styles -->
     <link href="css/styles.css" rel="stylesheet">
     <!-- Manage Customer Styles -->
@@ -47,7 +45,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="place-order.html">
+                        <a class="nav-link" href="#">
                             <i class="fas fa-shopping-cart"></i>
                             Register Student
                         </a>
@@ -64,20 +62,32 @@
                 <div class="row">
                     <div class="col col-12 col-lg-4">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Enter Item Code" id="txtItemCode">
+                            <label>Select Course</label>
+                            <select class="form-control" id="slctSelectCourse" placeholder="Select Course">
+                                <option value="">DEP</option>
+                                <option value="">JAVA</option>
+                                <option value="">Android</option>
+                                <option value="">MAX</option>
+                                <option value="">MM</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <lable>Course name</lable>
+                            <input type="text" class="form-control"  id="txtCourseName" placeholder="Course name">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Enter Item Description" id="txtItemDescription">
+                            <lable>Batch ID</lable>
+                            <input type="text" class="form-control"  id="txtBatchID" placeholder="Batch ID">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Enter Item Qty" id="txtItemQty">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Enter Item Unit Price" id="txtItemUnitPrice">
+                            <lable>Batch Name</lable>
+                            <input type="text" class="form-control"  id="txtBatchName" placeholder="Batch Name">
                         </div>
                         <div class="form-group text-center">
                             <button class="btn btn-primary" id="btn-save">Save</button>
-                            <button class="btn btn-success btn-clear">Clear</button>
+                            <button class="btn btn-warning" id="btn-Update">Update</button>
+
                         </div>
                     </div>
                     <div class="col col-12 col-lg-8">
@@ -86,14 +96,15 @@
                                 <col style="width: 100px;">
                                 <col>
                                 <col style="width: 100px;">
-                                <col style="width: 100px;">
                             </colgroup>
                             <thead>
+                            <col style="width: 100px;">
                             <tr>
-                                <th>Code</th>
-                                <th>Description</th>
-                                <th>Qty</th>
-                                <th>Unit Price</th>
+                                <th>Batch id</th>
+                                <th>Batch name</th>
+                                <th>Course ID</th>
+                                <th>Batch Name</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody id="tbody">
@@ -108,8 +119,6 @@
 </div>
 <!--JQuery JS-->
 <script src="js/jquery-3.4.1.min.js"></script>
-<!--Manage Item Script-->
-<script src="js/manage-item.js"></script>
 <!--Database Script-->
 <script src="js/database.js"></script>
 </body>
