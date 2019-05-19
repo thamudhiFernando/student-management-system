@@ -65,7 +65,7 @@
                             <i class="fas fa-user-friends"></i><br>
                             Course<br>
                         </h3>
-                        <h1 id="customerCount"></h1>
+                        <h1 id="courseCount"></h1>
                     </div>
                 </div>
                 <div class="col col-12 col-lg-4">
@@ -74,7 +74,7 @@
                             <i class="fas fa-sitemap"></i><br>
                             Batch
                         </h3>
-                        <h1 id="itemCount"></h1>
+                        <h1 id="batchCount"></h1>
                     </div>
                 </div>
                 <div class="col col-12 col-lg-4">
@@ -83,7 +83,7 @@
                             <i class="fas fa-shopping-cart"></i><br>
                             Student
                         </h3>
-                        <h1></h1>
+                        <h1 id="studentCount"></h1>
                     </div>
                 </div>
             </div>
@@ -96,6 +96,24 @@
 <!--Database Script-->
 <script src="js/database.js"></script>
 <!--Dashboard Script-->
+<script>
+    var batchArray = getAllBatches();
+    var courseArray = getAllCourses();
+    var studentArray = getAllStudents();
 
+    function getAllStudents() {
+        return students;
+    }
+    function getAllCourses() {
+        return courses;
+    }
+    function getAllBatches() {
+        return batchs;
+    }
+
+    $("#courseCount").text(courseArray.length);
+    $("#batchCount").text(batchArray.length);
+    $("#studentCount").text(studentArray.length);
+</script>
 </body>
 </html>

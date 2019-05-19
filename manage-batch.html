@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Modern POS 2019 - DEP3 Edition">
-    <title>Modern POS · DEP</title>
+    <title>Modern POS Â· DEP</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"
-    >
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- Custom styles -->
@@ -63,42 +65,49 @@
                 <div class="row">
                     <div class="col col-12 col-lg-4">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Enter Item Code" id="txtItemCode">
+                            <label>Select Course</label>
+                            <select class="form-control" id="slctSelectCourse" placeholder="Select Course">
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+
+                            <lable>Course name</lable>
+                            <input type="text" class="form-control" id="txtCourseName" placeholder="Course name" readonly="true">
+
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Enter Item Description"
-                                   id="txtItemDescription">
+                            <lable>Batch ID</lable>
+                            <input type="text" class="form-control" id="txtBatchID" placeholder="Batch ID" readonly="true">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Enter Item Qty" id="txtItemQty">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Enter Item Unit Price"
-                                   id="txtItemUnitPrice">
+
+                            <lable>Batch Name</lable>
+                            <input type="text" class="form-control" id="txtBatchName" placeholder="Batch Name">
+
                         </div>
                         <div class="form-group text-center">
-                            <button class="btn btn-primary" id="btn-save">Save</button>
-                            <button class="btn btn-success btn-clear">Clear</button>
+                            <button type="button" class="btn btn-primary" id="btnSave">Save</button>
                         </div>
                     </div>
                     <div class="col col-12 col-lg-8">
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-bordered table-hover" style="margin-top: 2%;" id="tblBatch">
                             <colgroup>
                                 <col style="width: 100px;">
                                 <col>
-                                <col style="width: 100px;">
-                                <col style="width: 100px;">
+                                <col>
+                                <col>
                             </colgroup>
                             <thead>
                             <tr>
-                                <th>Code</th>
-                                <th>Description</th>
-                                <th>Qty</th>
-                                <th>Unit Price</th>
+                                <th>Batch id</th>
+                                <th>Batch name</th>
+                                <th>Course ID</th>
+                                <th>Course Name</th>
+                                <th> Delete</th>
                             </tr>
                             </thead>
                             <tbody id="tbody">
-
                             </tbody>
                         </table>
                     </div>
@@ -109,9 +118,11 @@
 </div>
 <!--JQuery JS-->
 <script src="js/jquery-3.4.1.min.js"></script>
-<!--Manage Item Script-->
-<script src="js/manage-item.js"></script>
 <!--Database Script-->
 <script src="js/database.js"></script>
+<!--Batch Script-->
+<script src="js/manage-batch.js"></script>
+
 </body>
 </html>
+

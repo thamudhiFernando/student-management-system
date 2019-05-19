@@ -65,14 +65,9 @@
                         <div class="form-group">
                             <label style="margin-right: 7%">Student ID</label>
                             <div id="cmbStdID" class="btn-group">
-                                <button type="button" class="btn btn-outline-primary dropdown-toggle"
-                                        data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                    Select Student
-                                </button>
-                                <div class="dropdown-menu">
+                                <select class="form-control" id="selectStudentID">
 
-                                </div>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -134,7 +129,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary">Save</button>
+                                    <button type="button" class="btn btn-primary" id="model-save">Save</button>
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
@@ -148,8 +143,7 @@
                     <div class="col-12 col-lg-12">
                         <div class="form-group">
                             <label for="txtStdName">Student Name:</label>
-                            <input type="text" class="form-control" id="txtStdName" name="txtStdName"
-                                   readonly="true">
+                            <input type="text" class="form-control" id="studentName" readonly="true">
                         </div>
                     </div>
                 </div>
@@ -159,22 +153,16 @@
                         <div class="form-group">
                             <label style="margin-right: 10%; margin-top: 9%;">Course ID</label>
                             <div id="cmbCourseId" class="btn-group">
-                                <button type="button" class="btn btn-outline-primary dropdown-toggle"
-                                        data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                    Select Course
-                                </button>
-                                <div class="dropdown-menu">
+                                <select class="form-control" id="selectCourseID">
 
-                                </div>
+                                </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-8">
                         <div class="form-group">
                             <label for="txtCourseName">Course Name:</label>
-                            <input type="text" class="form-control" id="txtCourseName" name="txtCourseName"
-                                   readonly="true">
+                            <input type="text" class="form-control" id="txtCourseName" readonly="true">
                         </div>
                     </div>
                 </div>
@@ -184,22 +172,16 @@
                         <div class="form-group">
                             <label style="margin-right: 13%; margin-top: 9% ">Batch ID</label>
                             <div id="cmbBatchID" class="btn-group">
-                                <button type="button" class="btn btn-outline-primary dropdown-toggle"
-                                        data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                    Select Batch
-                                </button>
-                                <div class="dropdown-menu">
+                                <select class="form-control" id="selectBatchID">
 
-                                </div>
+                                </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-8">
                         <div class="form-group">
                             <label for="txtBatchName">Batch Name:</label>
-                            <input type="text" class="form-control" id="txtBatchName" name="txtBatchName"
-                                   readonly="true">
+                            <input type="text" class="form-control" id="txtBatchName" readonly="true">
                         </div>
                     </div>
                 </div>
@@ -227,7 +209,6 @@
                             <th>Batch ID</th>
                             <th>Batch Name</th>
                             <th>Delete</th>
-
                         </tr>
                         </thead>
                         <tbody id="tbody">
