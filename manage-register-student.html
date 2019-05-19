@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Modern POS 2019 - DEP3 Edition">
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"
+    >
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <!-- Custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Manage Customer Styles -->
+    <link rel="stylesheet" href="css/manage-items.css">
+
+</head>
+<body>
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="index.html">Modern POS</a>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="manage-course.html">
+                            <i class="fas fa-user-friends"></i>
+                            Manage Course
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="manage-batch.html">
+                            <i class="fas fa-sitemap"></i>
+                            Manage Batch
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="manage-register-student.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            Register Student
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Manage Student Registration</h1>
+            </div>
+            <section>
+                <div class="row">
+                    <div class="col-12 col-lg-5">
+                        <div class="form-group">
+                            <label style="margin-right: 7%">Student ID</label>
+                            <div id="cmbStdID" class="btn-group">
+                                <select class="form-control" id="selectStudentID">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-lg-2">
+                        <div class="col-12 col-lg-2"></div>
+                        <div>
+                            <button id="btnAdd" type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModalLong">
+                                + Add New
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">New Student</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="row">
+                                        <div class="col-12 col-lg-11">
+                                            <div class="form-group">
+                                                <label for="txtStdId">Student ID:</label>
+                                                <input type="text" class="form-control" id="txtStdId"
+                                                       name="custName">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-lg-11">
+                                            <div class="form-group">
+                                                <label for="txtStdName">Student Name:</label>
+                                                <input type="text" class="form-control" id="txtStdName"
+                                                       placeholder="Enter Student Name"
+                                                       name="txtStdName">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-lg-11">
+                                            <div class="form-group">
+                                                <label for="txtStdContactNo">Student Contact No:</label>
+                                                <input type="text" class="form-control" id="txtStdContactNo"
+                                                       placeholder="Enter Student Contact Number"
+                                                       name="txtStdContactNo">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" id="model-save">Save</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="row border-bottom">
+                    <div class="col-12 col-lg-12">
+                        <div class="form-group">
+                            <label for="txtStdName">Student Name:</label>
+                            <input type="text" class="form-control" id="studentName" readonly="true">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row border-bottom">
+                    <div class="col-12 col-lg-4">
+                        <div class="form-group">
+                            <label style="margin-right: 10%; margin-top: 9%;">Course ID</label>
+                            <div id="cmbCourseId" class="btn-group">
+                                <select class="form-control" id="selectCourseID">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-8">
+                        <div class="form-group">
+                            <label for="txtCourseName">Course Name:</label>
+                            <input type="text" class="form-control" id="txtCourseName" readonly="true">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row border-bottom">
+                    <div class="col-12 col-lg-4">
+                        <div class="form-group">
+                            <label style="margin-right: 13%; margin-top: 9% ">Batch ID</label>
+                            <div id="cmbBatchID" class="btn-group">
+                                <select class="form-control" id="selectBatchID">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-8">
+                        <div class="form-group">
+                            <label for="txtBatchName">Batch Name:</label>
+                            <input type="text" class="form-control" id="txtBatchName" readonly="true">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-5"></div>
+
+                    <div style="margin-top: 10px;">
+                        <button id="btnRegister" type="button" class="btn btn-primary"> Register</button>
+                    </div>
+                </div>
+
+                <div class="col col-12 col-lg-8">
+                    <table class="table table-bordered table-hover" style="margin-top: 2%;">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>Course ID</th>
+                            <th>Course Name</th>
+                            <th>Batch ID</th>
+                            <th>Batch Name</th>
+                            <th>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+        </main>
+    </div>
+</div>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/database.js"></script>
+<script src="js/manage-student-registrarion.js"></script>
+
+
+</body>
+</html>
