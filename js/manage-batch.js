@@ -76,7 +76,16 @@ function insertAndUpdate() {
             }
         }
         else if (buttonType == "Save") {
+            alert("save")
             if (validationForms()) {
+                batchs.push(
+                    {
+                        course_id: courseID,
+                        course_name: courseName,
+                        batch_id:batchID,
+                        batch_name: batchName
+                    }
+                );
                 var html = "<tr>" +
                     "<td>" + batchID + "</td>" +
                     "<td>" + batchName + "</td>" +
@@ -89,25 +98,14 @@ function insertAndUpdate() {
 
                 clearFields();
                 generateBatchID();
+
             }
         }
+        reload();
     });
 }
 
 $(document).ready(function () {
-
-    //load dynamic data to table
-    for (var i = 0; i < batchs.length; i++) {
-        var row="<tr>" +
-            "<td>"+batchs[i].batch_id+"</td>" +
-            "<td>"+batchs[i].batch_name+"</td>" +
-            "<td>"+batchs[i].course_id+"</td>" +
-            "<td>"+batchs[i].course_name+"</td>" +
-            "<td><i class=\"fas fa-trash\"></i></td>" +
-            "</tr>";
-        $("tbody").append(row);
-    }
-
     //load data to  combobox
     for (var i = 0; i < courses.length; i++) {
         var option = "<option>" + courses[i].course_id + "</option>";
@@ -120,22 +118,38 @@ $(document).ready(function () {
         $("#txtCourseName").val(findCourseName(courseID));
     });
 
+    reload();
+
     //load batch id
     generateBatchID();
 
     rowClick();
     insertAndUpdate();
 
+
 });
 
 
+function reload() {
+    $('#tbody').empty();
+    alert(batchs.length)
+    for (var i = 0; i < batchs.length; i++) {
+        var row="<tr>" +
+            "<td>"+batchs[i].batch_id+"</td>" +
+            "<td>"+batchs[i].batch_name+"</td>" +
+            "<td>"+batchs[i].course_id+"</td>" +
+            "<td>"+batchs[i].course_name+"</td>" +
+            "<td><i class=\"fas fa-trash\"></i></td>" +
+            "</tr>";
+        $("tbody").append(row);
 
-// delete row
-$("#tbody tr td:last-child").click(function () {
-    if (confirm("Are you whether you want to delete this record?")) {
-        var row = $(this).parent();
-        $(this).parent("tr").fadeOut(200, function () {
-            row.remove();
+        $("#tbody tr td:last-child").click(function () {
+            if (confirm("Are you whether you want to delete this record?")) {
+                var row = $(this).parent();
+                $(this).parent("tr").fadeOut(200, function () {
+                    row.remove();
+                });
+            }
         });
     }
-});
+}
